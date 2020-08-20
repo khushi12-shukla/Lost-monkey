@@ -15,7 +15,6 @@ function setup() {
   back.addImage(backA);
   back.scale=2;
   back.velocityX=-4;
-  back.x=back.width/2;
   
   ground=createSprite(400,400,800,20);
   ground.visible=false;
@@ -30,8 +29,8 @@ function setup() {
     
 function draw() {  
   background("white");
-  ground.velocityX=-4;
-  ground.x=ground.width/2;
+  if(ground.x<0) { ground.x=ground.width/2; } 
+  if(back.x<100){ back.x=back.width/2; }
   
    if(keyDown("space")){
     monkey.velocityY=-15;
